@@ -13,7 +13,7 @@ Mods added:
 - activetagindicatorbar
 - barheight
 - layoutmenu
-- two bar for arch monitor
+- bar for each monitor
 
 # Dmenu
 Mods:

@@ -37,8 +37,8 @@ static const unsigned int ulinevoffset	= 0;	/* how far above the bottom of the b
 static const int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just the active ones */
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "辶", "﯎" };
-static const char *tags1[] = { "", "", "", "", "", "", ""};
+static const char *tags[] = { "", "", "", "", "", "辶", ""};
+static const char *tags1[] = { "ﭮ", "", "", "", "", "", ""};
 static const char *degrade[][2] = {
         { col_gray4, "#222831" },
         { col_gray4, "#1f252d" },
@@ -57,13 +57,13 @@ static const Rule rules[] = {
 	/* class      instance    title       			tags mask     isfloating   monitor */
 	{ NULL,       NULL,       "KeePassXC",			1 << 1,       0,            0 },
 	{ NULL,       NULL,       "calibre",  			1 << 2,       0,            0 },
+	{ NULL,	      NULL,       "feh",   			1 << 3,       0,            0 },
 	{ NULL,	      NULL,       "qutebrowser",   		1 << 6,       0,            0 },
 
 	{ NULL,       NULL,       "Discord",			1 << 0,       0,            1 },
 	{ NULL,       NULL,       "Telegram",			1 << 1,       0,            1 },
 	{ NULL,       NULL,       "Skype",			1 << 2,       0,            1 },
 	{ NULL,       NULL,       "Steam",			1 << 3,       0,            1 },
-	{ NULL,	      NULL,       "qutebrowser",   		1 << 4,       0,            1 },
 	{ NULL,	      NULL,       "Dolphin",   			1 << 5,       0,            1 },
 };
 
