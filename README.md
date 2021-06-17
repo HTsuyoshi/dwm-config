@@ -12,6 +12,7 @@ Mods added:
 - underlinetags
 - activetagindicatorbar
 - barheight
+- alpha bar
 - layoutmenu
 - bar for each monitor
 

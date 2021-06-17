@@ -6,6 +6,13 @@ static const unsigned int gappx	    = 10;
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;       
 static const int topbar             = 1;        
+static const int baralpha           = 0xe0;        
+static const int borderalpha        = OPAQUE;        
+static const unsigned int alphas[][3]      = {
+	/*               fg      bg        border     */
+	[SchemeNorm] = { OPAQUE, baralpha, borderalpha },
+	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
+};
 static const int user_bh            = 23;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
 static const char *fonts[]          = { "NotoSansMono Nerd Font:size=14" };
 static const char dmenufont[]       = "NotoSansMono Nerd Font:size=14";
