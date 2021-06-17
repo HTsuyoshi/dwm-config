@@ -3,8 +3,8 @@
 
 # DWM
 My configs for dwm.
-Some masks.
 I use nerd font.
+Remeber to set layoutmenu.sh in the PATH variable.
 
 Mods added: 
 - fullgaps
