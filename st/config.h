@@ -6,7 +6,8 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 // static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
-static char *font = "Roboto Mono:size=14";
+ static char *font = "Roboto Mono:size=14";
+// static char *font = "Source Code Pro,Source Code Pro Semibold";
 // static char *font = "Terminus:size=14";
 static int borderpx = 2;
 
