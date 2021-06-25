@@ -6,7 +6,7 @@ static const unsigned int gappx	    = 10;
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;       
 static const int topbar             = 1;        
-static const int baralpha           = 0xe0;        
+static const int baralpha           = 150; // 0 to 255
 static const int borderalpha        = OPAQUE;        
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
@@ -22,11 +22,12 @@ static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#E4E4E4"; // Char color
 static const char col_gray5[]       = "#D65A31"; // Char color selected
 static const char degrade1[4][8] = {
-        "#0d1315",
-        "#0a1011",
-        "#070d0d",
+        "#131418",
+        "#101013",
+        "#0d0c0e",
         "#000000",
 };
+
 static const char col_cyan[]        = "#222831"; // degrade[0]
 static const char *colors[][3]      = {
 	[SchemeNorm] = { col_gray4, col_cyan, col_gray2 },
@@ -44,16 +45,14 @@ static const unsigned int ulinevoffset	= 0;	/* how far above the bottom of the b
 static const int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just the active ones */
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "辶", ""};
-static const char *tags1[] = { "ﭮ", "", "", "", "", "", ""};
+static const char *tags[] = {"", "", "", "", ""};
+static const char *tags1[] = {"ﭮ", "", "", "", ""};
 static const char *degrade[][2] = {
         { col_gray4, "#222831" },
-        { col_gray4, "#1f252d" },
-        { col_gray4, "#1c2229" },
-        { col_gray4, "#191f25" },
-        { col_gray4, "#161c21" },
-        { col_gray4, "#13191d" },
-        { col_gray4, "#101619" },
+        { col_gray4, "#1f242c" },
+        { col_gray4, "#1c2027" },
+        { col_gray4, "#191c22" },
+        { col_gray4, "#16181d" },
 };
 
 static const Rule rules[] = {
@@ -64,14 +63,12 @@ static const Rule rules[] = {
 	/* class      instance    title       			tags mask     isfloating   monitor */
 	{ NULL,       NULL,       "KeePassXC",			1 << 1,       0,            0 },
 	{ NULL,       NULL,       "calibre",  			1 << 2,       0,            0 },
-	{ NULL,	      NULL,       "feh",   			1 << 3,       0,            0 },
-	{ NULL,	      NULL,       "qutebrowser",   		1 << 6,       0,            0 },
+	{ NULL,	      NULL,       "qutebrowser",   		1 << 4,       0,            0 },
 
 	{ NULL,       NULL,       "Discord",			1 << 0,       0,            1 },
 	{ NULL,       NULL,       "Telegram",			1 << 1,       0,            1 },
 	{ NULL,       NULL,       "Skype",			1 << 2,       0,            1 },
 	{ NULL,       NULL,       "Steam",			1 << 3,       0,            1 },
-	{ NULL,	      NULL,       "Dolphin",   			1 << 5,       0,            1 },
 };
 
 /* layout(s) */
@@ -102,11 +99,15 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, "-l", "5", NULL };
 // static const char *termcmd[]  = { "st", NULL};
 static const char *termcmd[]  = { "cool-retro-term", NULL};
+static const char *badapple[]  = { "cool-retro-term", "-e", "badapple", NULL};
+static const char *badappleconst[]  = { "cool-retro-term", "-e", "badapple", "-r", "1", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_a,      spawn,          {.v = badapple } },
+	{ MODKEY|ShiftMask,             XK_a,	   spawn,          {.v = badappleconst } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },

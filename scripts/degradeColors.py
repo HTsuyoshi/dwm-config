@@ -9,7 +9,7 @@ def printColor(RGBInit):
     print()
 
 def printColor1(RGBInit):
-    print("\t\"", end="")
+    print("\t\"#", end="")
     for j in range(3):
         print(str(hex(RGBInit[j]))[2:].zfill(2), end="")
     print("\",", end="")
