@@ -2,11 +2,11 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx	    = 10;
+static const unsigned int gappx	    = 0;
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;       
 static const int topbar             = 1;        
-static const int baralpha           = 150; // 0 to 255
+static const int baralpha           = 180; // 0 to 255
 static const int borderalpha        = OPAQUE;        
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
@@ -14,8 +14,8 @@ static const unsigned int alphas[][3]      = {
 	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
 };
 static const int user_bh            = 23;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
-static const char *fonts[]          = { "NotoSansMono Nerd Font:size=14" };
-static const char dmenufont[]       = "NotoSansMono Nerd Font:size=14";
+static const char *fonts[]          = { "DroidSansMono Nerd Font:size=12" };  // "NotoSansMono Nerd Font:size=14" };
+static const char dmenufont[]       = "DroidSansMono Nerd Font:size=12"; // "NotoSansMono Nerd Font:size=14";
 static const char col_gray1[]       = "#171339";
 static const char col_gray2[]       = "#030103";
 static const char col_gray3[]       = "#bbbbbb";
@@ -45,8 +45,10 @@ static const unsigned int ulinevoffset	= 0;	/* how far above the bottom of the b
 static const int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just the active ones */
 
 /* tagging */
-static const char *tags[] = {"", "", "", "", ""};
-static const char *tags1[] = {"ﭮ", "", "", "", ""};
+// static const char *tags[] = {"", "", "", "", ""};
+// static const char *tags1[] = {"ﭮ", "", "", "", ""};
+static const char *tags[] = {"Term", "Draw", "Book", "Music", "Brow"};
+static const char *tags1[] = {"Disc", "Tele", "Skyp", "Steam", "Lock"};
 static const char *degrade[][2] = {
         { col_gray4, "#222831" },
         { col_gray4, "#1f242c" },
@@ -61,14 +63,15 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title1
 	 */
 	/* class      instance    title       			tags mask     isfloating   monitor */
-	{ NULL,       NULL,       "KeePassXC",			1 << 1,       0,            0 },
+	{ NULL,       NULL,       "okular",  			1 << 2,       0,            0 },
 	{ NULL,       NULL,       "calibre",  			1 << 2,       0,            0 },
 	{ NULL,	      NULL,       "qutebrowser",   		1 << 4,       0,            0 },
 
 	{ NULL,       NULL,       "Discord",			1 << 0,       0,            1 },
 	{ NULL,       NULL,       "Telegram",			1 << 1,       0,            1 },
-	{ NULL,       NULL,       "Skype",			1 << 2,       0,            1 },
-	{ NULL,       NULL,       "Steam",			1 << 3,       0,            1 },
+	{ NULL,       NULL,       "Skype",			    1 << 2,       0,            1 },
+	{ NULL,       NULL,       "Steam",			    1 << 3,       0,            1 },
+	{ NULL,       NULL,       "KeePassXC",			1 << 4,       0,            1 },
 };
 
 /* layout(s) */
@@ -97,8 +100,8 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, "-l", "5", NULL };
-// static const char *termcmd[]  = { "st", NULL};
-static const char *termcmd[]  = { "cool-retro-term", NULL};
+ static const char *termcmd[]  = { "st", NULL};
+// static const char *termcmd[]  = { "cool-retro-term", NULL};
 static const char *badapple[]  = { "cool-retro-term", "-e", "badapple", NULL};
 static const char *badappleconst[]  = { "cool-retro-term", "-e", "badapple", "-r", "1", NULL};
 
