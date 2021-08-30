@@ -5,8 +5,18 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+// static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true\0";
+static char *fonts[] = {
+    "Liberation Mono:pixelsize=12:antialias=true:autohint=true\0",
+	"Pokemon Classic:pixelsize=10:antialias=false:autohint=false\0",
+	"5thgradecursive-2.ttf: 5th Grade Cursive:pixelsize=10:antialias=false:autohint=false\0",
+	"Minecrafter Alt:pixelsize=10:antialias=false:autohint=false\0",
+	"RapScript:pixelsize=10:antialias=false:autohint=false\0",
+	"WildStyle:pixelsize=10:antialias=false:autohint=false\0",
+	"StencilFont,Stencil:pixelsize=10:antialias=false:autohint=false\0",
+};
 
+static size_t currentfont = 0;
 static int borderpx = 2;
 
 /*
@@ -20,7 +30,7 @@ static int borderpx = 2;
 static char *shell = "/bin/sh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
-char *scroll = NULL;
+char *scroll = "/usr/local/bin/scroll";
 char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 
 /* identification sequence returned in DA and DECID */
@@ -203,6 +213,7 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
+    { TERMMOD,              XK_S,           cyclefonts,     {}        },
 };
 
 /*
