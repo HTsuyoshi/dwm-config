@@ -1629,7 +1629,7 @@ setup(void)
 		scheme[i] = drw_scm_create(drw, colors[i], alphas[1], 3);
 	tagscheme = ecalloc(LENGTH(degrade), sizeof(Clr *));
 	for (i = 0; i < LENGTH(degrade); i++)
-		tagscheme[i] = drw_scm_create(drw, degrade[i], alphas[1], 2);
+		tagscheme[i] = drw_scm_create(drw, degrade[i % LENGTH(degrade)], alphas[1], 2);
 		// tagscheme[i] = drw_scm_create(drw, degrade[i], alphas[i], 2);
 	/* init bars */
 	updatebars();
