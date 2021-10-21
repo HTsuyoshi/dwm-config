@@ -14,8 +14,7 @@ static const unsigned int alphas[][3]      = {
 	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
 };
 static const int user_bh            = 23;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
-static const char *fonts[]          = { "DroidSansMono Nerd Font:size=12" };  // "NotoSansMono Nerd Font:size=14" };
-static const char dmenufont[]       = "DroidSansMono Nerd Font:size=12"; // "NotoSansMono Nerd Font:size=14";
+static const char *fonts[]          = { "TerminessTTF Nerd Font Mono:size=14" };// "DroidSansMono Nerd Font:size=12" };  // "NotoSansMono Nerd Font:size=14" };
 static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#030103";
 static const char col_gray3[]       = "#bbbbbb";
@@ -108,10 +107,8 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-// static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, "-l", "5", NULL };
 static const char *menucmd[] = { "rofi", "-show", "run", NULL};
-// static const char *termcmd[]  = { "st", NULL};
- static const char *termcmd[]  = { "cool-retro-term", NULL};
+static const char *termcmd[]  = { "cool-retro-term", "-p", "$HOME/opt/crt_profiles/azz.json", NULL};
 static const char *badapple[]  = { "cool-retro-term", "-e", "badapple", NULL};
 static const char *badappleconst[]  = { "cool-retro-term", "-e", "badapple", "-r", "1", NULL};
 
