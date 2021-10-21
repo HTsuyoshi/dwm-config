@@ -2,7 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx	    = 0;
+static const unsigned int gappx	    = 10;
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;       
 static const int topbar             = 1;        
@@ -14,7 +14,7 @@ static const unsigned int alphas[][3]      = {
 	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
 };
 static const int user_bh            = 23;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
-static const char *fonts[]          = { "TerminessTTF Nerd Font Mono:size=14" };// "DroidSansMono Nerd Font:size=12" };  // "NotoSansMono Nerd Font:size=14" };
+static const char *fonts[]          = { "TerminessTTF Nerd Font Mono:size=14" };
 static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#030103";
 static const char col_gray3[]       = "#bbbbbb";
