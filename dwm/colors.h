@@ -5,7 +5,8 @@ static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#030103";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#E4E4E4"; // Char color
-static const char col_gray5[]       = "#D65A31"; // Char color selected
+static const char col_gray5[]       = "#FF00FF"; // Char color selected
+static const char col_cyan[]        = "#FF00FF";
 
 static const char degrade1[][9] = {
         "#131418",

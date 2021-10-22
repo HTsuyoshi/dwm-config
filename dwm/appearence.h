@@ -16,14 +16,13 @@ static const unsigned int alphas[][3]      = {
 static const int user_bh            = 23;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
 static const char *fonts[]          = { "TerminessTTF Nerd Font Mono:size=14" };
 
-static const char col_cyan[]        = "#222831"; // degrade[0]
 static const char *colors[][7]      = {
-	[SchemeNorm] = { col_gray4, col_cyan, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
-	[SchemeStatus]  = { col_gray4, degrade1[3],  "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
-	[SchemeTagsSel]  = { col_gray5, col_cyan,  "#000000"  }, // Tagbar left sel
-	[SchemeTagsNorm]  = { col_gray4, degrade1[0],  "#000000"  }, // Tagbar left unsel
-        [SchemeInfoSel]  = { col_gray4, degrade1[2],  "#000000"  }, // infobar middle  sel
+	[SchemeNorm]          = { col_gray4, col_cyan, col_gray2 },
+	[SchemeSel]           = { col_gray4, col_cyan, col_cyan },
+	[SchemeStatus]        = { col_gray4, degrade1[3],  "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
+	[SchemeTagsSel]       = { col_gray5, col_gray1,  "#000000"  }, // Tagbar left sel
+	[SchemeTagsNorm]      = { col_gray4, degrade1[0],  "#000000"  }, // Tagbar left unsel
+        [SchemeInfoSel]   = { col_gray4, degrade1[2],  "#000000"  }, // infobar middle  sel
         [SchemeInfoNorm]  = { col_gray4, degrade1[1],  "#000000"  }, // infobar middle  unsel
 };
 
