@@ -1,5 +1,5 @@
 # My graphical interface
-<img src="./assets/desktop.png" />
+<img src="./assets/desktop.gif" />
 
 # DWM
 My configs for dwm.
