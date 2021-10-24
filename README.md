@@ -16,12 +16,6 @@ Mods added:
 - layoutmenu
 - bar for each monitor
 
-# Dmenu
-Mods:
-- border
-- grids
-- highlight
-
 # Scripts
 Automatically creates a degrade config.
 
