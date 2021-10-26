@@ -21,3 +21,6 @@ Mods added:
 # Scripts
 Automatically creates a degrade config.
 
+# Bug
+If the bar of the second monitor is broken use:
+`MODKEY + b`
