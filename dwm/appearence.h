@@ -8,7 +8,7 @@ static const unsigned int gappx     = 10;
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;
 static const int topbar             = 1;
-static const int baralpha           = 128; // 0 to 255
+static const int baralpha           = 200; // 0 to 255
 static const int borderalpha        = OPAQUE;
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
