@@ -5,6 +5,7 @@ static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const int vertpad            = 10;       /* vertical padding of bar */
 static const int sidepad            = 10;       /* horizontal padding of bar */
 static const unsigned int gappx     = 10;
+static const unsigned int statgap   = 6;
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;
 static const int topbar             = 1;
@@ -15,7 +16,7 @@ static const unsigned int alphas[][3]      = {
 	[SchemeNorm] = { OPAQUE, baralpha, borderalpha },
 	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
 };
-static const int user_bh            = 23;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
+static const int user_bh            = 34;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
 static const char *fonts[]          = { "TerminessTTF Nerd Font Mono:size=14" };
 
 static const char *colors[][7]      = {

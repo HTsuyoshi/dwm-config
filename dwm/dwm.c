@@ -755,7 +755,8 @@ drawstatusbar(Monitor *m, int bh, char* stext) {
 	drw_setscheme(drw, scheme[LENGTH(colors)]);
 	drw->scheme[ColFg] = scheme[SchemeNorm][ColFg];
 	drw->scheme[ColBg] = scheme[SchemeNorm][ColBg];
-	drw_rect(drw, x, 0, w, bh, 1, 1);
+	// drw_rect(drw, x, 0, w, bh, 1, 1);
+	drw_rect(drw, x, 0 + statgap, w, bh - 2 * statgap, 1, 1);
 	x++;
 
 	/* process status text */
@@ -766,7 +767,7 @@ drawstatusbar(Monitor *m, int bh, char* stext) {
 
 			text[i] = '\0';
 			w = TEXTW(text) - lrpad;
-			drw_text(drw, x, 0, w, bh, 0, text, 0);
+			drw_text(drw, x, 0 + statgap, w, bh - 2 * statgap, 0, text, 0);
 
 			x += w;
 
@@ -810,7 +811,8 @@ drawstatusbar(Monitor *m, int bh, char* stext) {
 
 	if (!isCode) {
 		w = TEXTW(text) - lrpad;
-		drw_text(drw, x, 0, w, bh, 0, text, 0);
+		//drw_text(drw, x, 0, w, bh, 0, text, 0);
+		drw_text(drw, x, 0 + statgap, w, bh - 2 * statgap, 0, text, 0);
 	}
 
 	drw_setscheme(drw, scheme[SchemeNorm]);
@@ -854,7 +856,7 @@ drawbar(Monitor *m)
 		if (ulineall || m->tagset[m->seltags] & 1 << i) /* if there are conflicts, just move these lines directly underneath both 'drw_setscheme' and 'drw_text' :) */
 		drw_rect(drw, x + ulinepad, bh - ulinestroke - ulinevoffset, w - (ulinepad * 2), ulinestroke, 1, 0);
 		if (occ & 1 << i)
-			drw_rect(drw, x + boxw, 20, w - ( 2 * boxw + 1), 3,
+			drw_rect(drw, x + boxw, user_bh-3, w - ( 2 * boxw + 1), 3,
 				m == selmon && selmon->sel && selmon->sel->tags & 1 << i,
 				urg & 1 << i);
 		x += w;
