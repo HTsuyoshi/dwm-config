@@ -15,6 +15,8 @@ Mods added:
 - alpha bar
 - layoutmenu
 - bar for each monitor
+- status2d
+- bar padding
 
 # Scripts
 Automatically creates a degrade config.
