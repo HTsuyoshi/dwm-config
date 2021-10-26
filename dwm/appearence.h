@@ -19,7 +19,7 @@ static const int user_bh            = 23;        /* 0 means that dwm will calcul
 static const char *fonts[]          = { "TerminessTTF Nerd Font Mono:size=14" };
 
 static const char *colors[][7]      = {
-	[SchemeNorm]          = { col_gray4, col_cyan, col_gray2 },
+	[SchemeNorm]          = { col_gray4, degrade1[3], col_gray2 },
 	[SchemeSel]           = { col_gray4, col_cyan, col_cyan },
 	[SchemeStatus]        = { col_gray4, degrade1[3],  "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
 	[SchemeTagsSel]       = { col_gray5, col_gray1,  "#000000"  }, // Tagbar left sel
