@@ -450,7 +450,8 @@ buttonpress(XEvent *e)
 	if (ev->window == selmon->barwin) {
 		i = x = 0;
 		do
-			x += TEXTW(tags[i]);
+			// x += TEXTW(tags[i]);
+			x += TEXTW(m->num == 0 ? tags[i] : tags1[i]);
 		while (ev->x >= x && ++i < LENGTH(tags));
 		if (i < LENGTH(tags)) {
 			click = ClkTagBar;
@@ -846,7 +847,8 @@ drawbar(Monitor *m)
 	}
 	x = 0;
 	for (i = 0; i < LENGTH(tags); i++) {
-		w = TEXTW(tags[i]);
+		// w = TEXTW(tags[i]);
+		w = TEXTW(m->num == 0 ? tags[i] : tags1[i]);
 		// drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeSel : SchemeNorm]);
 		// drw_setscheme(drw, tagscheme[i] ); // rainbow
 		drw_setscheme(drw, (m->tagset[m->seltags] & 1 << i ? scheme[SchemeTagsSel] : tagscheme[i] )); // rainbow + change selected tag
