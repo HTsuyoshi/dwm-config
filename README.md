@@ -1,4 +1,3 @@
-# My graphical interface
 <img src="./assets/desktop.gif" />
 
 # DWM
