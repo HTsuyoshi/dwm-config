@@ -16,6 +16,7 @@ Mods added:
 - bar for each monitor
 - status2d
 - bar padding
+- hide vacant tags
 
 # Scripts
 Automatically creates a degrade config.

@@ -44,5 +44,5 @@ static const int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just 
 // static const char *tags[]  = {"ターミナル", "ドローイング", "ブック", "ミュージック", "ブラウザー"};
 // static const char *tags1[] = {"ディスコード", "テレグラム", "スカイプ", "スティーム", "ロック"};
 
-static const char *tags[]  = {"端末", "図", "本", "音楽", "ブラウザ"};
-static const char *tags1[] = {"ディスコード", "テレグラム", "スカイプ", "スティーム", "合言葉"};
+static const char *tags[]  = {"ターミナル", "図", "本", "音楽", "ブラウザ"};
+static const char *tags1[] = {"ディスコード", "テレグラム", "スカイプ", "スティーム", "パスワード"};
