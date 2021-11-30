@@ -26,9 +26,9 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "﬿",      tile },    /* first entry is default    ﬿      響舘﩮﩯侀  */
+	{ "",      NULL },    /* no layout function means floating behavior */
+	{ "",      monocle },
 };
 
 /* key definitions */
@@ -45,7 +45,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *menucmd[] = { "rofi", "-show", "run", NULL};
-static const char *termcmd[]  = { "cool-retro-term", "-p", "$HOME/opt/crt_profiles/azz.json", NULL};
+static const char *termcmd[]  = { "st", NULL};
 static const char *badapple[]  = { "cool-retro-term", "-e", "badapple", NULL};
 static const char *badappleconst[]  = { "cool-retro-term", "-e", "badapple", "-r", "1", NULL};
 
