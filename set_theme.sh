@@ -14,7 +14,7 @@ function select_theme() {
     echo ''
 
     [[ -f ./dwm-themes/$theme ]] && \
-        (cp ./dwm-themes/$theme ./dwm/colors.h && \
+        (cp ./dwm-themes/$theme ./my-dwm/colors.h && \
         echo 'Sucessful changed theme') || echo 'Changed failed'
 }
 
