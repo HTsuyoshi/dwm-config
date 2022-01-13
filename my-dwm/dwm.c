@@ -839,9 +839,6 @@ drawbar(Monitor *m)
 
 	/* draw status first so it can be overdrawn by tags later */
 	if (m == selmon) { /* status is only drawn on selected monitor */
-	    //drw_setscheme(drw, scheme[SchemeStatus]);
-	    //tw = TEXTW(stext) - lrpad + 2; /* 2px right padding */
-	    //drw_text(drw, m->ww - tw - 2 * sp, 0, tw, bh, 0, stext, 0);
         tw = m->ww - drawstatusbar(m, bh, stext) - 2 * sp;
 	}
 
@@ -849,11 +846,6 @@ drawbar(Monitor *m)
         occ |= c->tags == 255 ? 0 : c->tags;
  		if (c->isurgent)
  			urg |= c->tags;
-        /*
-		occ |= c->tags;
-		if (c->isurgent)
-			urg |= c->tags;
-            */
 	}
 	x = 0;
 	for (i = 0; i < LENGTH(tags); i++) {
@@ -861,11 +853,8 @@ drawbar(Monitor *m)
 		if (!(occ & 1 << i || m->tagset[m->seltags] & 1 << i))
 		    continue;
 
-		// w = TEXTW(tags[i]);
 		w = TEXTW(m->num == 0 ? tags[i] : tags1[i]);
-		// drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeSel : SchemeNorm]);
-		// drw_setscheme(drw, tagscheme[i] ); // rainbow
-		drw_setscheme(drw, (m->tagset[m->seltags] & 1 << i ? scheme[SchemeTagsSel] : tagscheme[i] )); // rainbow + change selected tag
+		drw_setscheme(drw, (m->tagset[m->seltags] & 1 << i ? scheme[SchemeTagsSel] : tagscheme[i] ));
 		// Two monitors
 		drw_text(drw, x, 0, w, bh, lrpad / 2, m->num == 0 ? tags[i] : tags1[i], urg & 1 << i);
 
@@ -878,19 +867,16 @@ drawbar(Monitor *m)
 		x += w;
 	}
 	w = blw = TEXTW(m->ltsymbol);
-	// drw_setscheme(drw, scheme[SchemeNorm]);
 	drw_setscheme(drw, scheme[SchemeTagsNorm]);
 	x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
 
 	if ((w = m->ww - tw - x) > bh) {
 		if (m->sel) {
-			//drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
 			drw_setscheme(drw, scheme[m == selmon ? SchemeInfoSel : SchemeInfoNorm]);
 			drw_text(drw, x, 0, w - 2 * sp, bh, lrpad / 2, m->sel->name, 0);
 			if (m->sel->isfloating)
 				drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
 		} else {
-			// drw_setscheme(drw, scheme[SchemeNorm]);
 			drw_setscheme(drw, scheme[m == selmon ? SchemeInfoSel : SchemeInfoNorm]);
 			drw_rect(drw, x, 0, w - 2 * sp, bh, 1, 1);
 		}
@@ -2195,7 +2181,7 @@ void
 updatestatus(void)
 {
 	if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext)))
-		strcpy(stext, "dwm-"VERSION);
+		strcpy(stext, "");
 	drawbar(selmon);
 }
 
