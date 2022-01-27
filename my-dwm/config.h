@@ -47,8 +47,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *menucmd[] = { "rofi", "-show", "run", NULL};
 static const char *termcmd[]  = { "st", NULL};
 static const char *screenshot[]  = { "flameshot", "gui", NULL};
-static const char *badapple[]  = { "cool-retro-term", "-e", "badapple", NULL};
-static const char *badappleconst[]  = { "cool-retro-term", "-e", "badapple", "-r", "1", NULL};
+static const char *badapple[]  = { "cool-retro-term", "-e", "badapple", NULL}; static const char *badappleconst[]  = { "cool-retro-term", "-e", "badapple", "-r", "1", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -56,7 +55,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_a,      spawn,          {.v = badapple } },
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          {.v = badappleconst } },
-	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = screenshot } },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = screenshot } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
