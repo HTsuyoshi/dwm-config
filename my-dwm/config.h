@@ -6,11 +6,13 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title1
 	 */
 	/* class      instance    title       			tags mask     isfloating   monitor */
-	{ NULL,       NULL,       "krita",  			1 << 2,       0,            0 },
-	{ NULL,       NULL,       "gimp",  			    1 << 2,       0,            0 },
-	{ NULL,       NULL,       "okular",  			1 << 2,       0,            0 },
+	{ NULL,       NULL,       "Krita",  			1 << 1,       0,            0 },
+	{ NULL,       NULL,       "GIMP",  			    1 << 1,       0,            0 },
+	{ NULL,       NULL,       "Okular",  			1 << 2,       0,            0 },
 	{ NULL,       NULL,       "calibre",  			1 << 2,       0,            0 },
+	{ NULL,	      NULL,       "spotify",   	    	1 << 3,       0,            0 },
 	{ NULL,	      NULL,       "qutebrowser",   		1 << 4,       0,            0 },
+	{ NULL,	      NULL,       "Mozilla Firefox",    1 << 4,       0,            0 },
 
 	{ NULL,       NULL,       "Discord",			1 << 0,       0,            1 },
 	{ NULL,       NULL,       "Telegram",			1 << 1,       0,            1 },
@@ -23,9 +25,7 @@ static const Rule rules[] = {
 static const float mfact     = 0.60; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
-
-static const Layout layouts[] = {
-	/* symbol     arrange function */
+static const Layout layouts[] = { /* symbol     arrange function */
 	{ "﬿",      tile },    /* first entry is default    ﬿      響舘﩮﩯侀  */
 	{ "",      NULL },    /* no layout function means floating behavior */
 	{ "",      monocle },
@@ -47,7 +47,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *menucmd[] = { "rofi", "-show", "run", NULL};
 static const char *termcmd[]  = { "st", NULL};
 static const char *screenshot[]  = { "flameshot", "gui", NULL};
-static const char *badapple[]  = { "cool-retro-term", "-e", "badapple", NULL}; static const char *badappleconst[]  = { "cool-retro-term", "-e", "badapple", "-r", "1", NULL};
+static const char *badapple[]  = { "cool-retro-term", "-e", "badapple", NULL};
+static const char *badappleconst[]  = { "cool-retro-term", "-e", "badapple", "-r", "1", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
