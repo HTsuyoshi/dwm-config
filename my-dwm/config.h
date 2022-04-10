@@ -46,14 +46,16 @@ static const Layout layouts[] = { /* symbol     arrange function */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *menucmd[] = { "rofi", "-show", "run", NULL};
 static const char *termcmd[]  = { "st", NULL};
+static const char *termcmdtmux[]  = { "st", "tmux", NULL};
 static const char *screenshot[]  = { "flameshot", "gui", NULL};
-static const char *badapple[]  = { "cool-retro-term", "-e", "badapple", NULL};
+static const char *badapple[]  = { "st", "-e", "badapple", NULL};
 static const char *badappleconst[]  = { "cool-retro-term", "-e", "badapple", "-r", "1", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = menucmd} },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = termcmdtmux } },
 	{ MODKEY,                       XK_a,      spawn,          {.v = badapple } },
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          {.v = badappleconst } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = screenshot } },
