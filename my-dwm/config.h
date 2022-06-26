@@ -6,6 +6,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title1
 	 */
 	/* class      instance    title       			tags mask     isfloating   monitor */
+	{ NULL,       NULL,       "Discord",			1 << 0,       0,            0 },
 	{ NULL,       NULL,       "Krita",  			1 << 1,       0,            0 },
 	{ NULL,       NULL,       "GIMP",  			    1 << 1,       0,            0 },
 	{ NULL,       NULL,       "Okular",  			1 << 2,       0,            0 },
@@ -13,12 +14,9 @@ static const Rule rules[] = {
 	{ NULL,	      NULL,       "spotify",   	    	1 << 3,       0,            0 },
 	{ NULL,	      NULL,       "qutebrowser",   		1 << 4,       0,            0 },
 	{ NULL,	      NULL,       "Mozilla Firefox",    1 << 4,       0,            0 },
-
-	{ NULL,       NULL,       "Discord",			1 << 0,       0,            1 },
-	{ NULL,       NULL,       "Telegram",			1 << 1,       0,            1 },
-	{ NULL,       NULL,       "Skype",			    1 << 2,       0,            1 },
-	{ NULL,       NULL,       "Steam",			    1 << 3,       0,            1 },
-	{ NULL,       NULL,       "KeePassXC",			1 << 4,       0,            1 },
+	{ NULL,       NULL,       "Skype",			    1 << 7,       0,            0 },
+	{ NULL,       NULL,       "Steam",			    1 << 8,       0,            0 },
+	{ NULL,       NULL,       "KeePassXC",			1 << 9,       0,            0 },
 };
 
 /* layout(s) */
