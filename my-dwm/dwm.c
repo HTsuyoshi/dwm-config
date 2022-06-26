@@ -455,8 +455,7 @@ buttonpress(XEvent *e)
 			/* do not reserve space for vacant tags */
 			if (!(occ & 1 << i || m->tagset[m->seltags] & 1 << i))
 				continue;
-			// x += TEXTW(tags[i]);
-			x += TEXTW(m->num == 0 ? tags[i] : tags1[i]);
+			x += TEXTW(tags[i]);
         } while (ev->x >= x && ++i < LENGTH(tags));
 		if (i < LENGTH(tags)) {
 			click = ClkTagBar;
@@ -853,10 +852,10 @@ drawbar(Monitor *m)
 		if (!(occ & 1 << i || m->tagset[m->seltags] & 1 << i))
 		    continue;
 
-		w = TEXTW(m->num == 0 ? tags[i] : tags1[i]);
+		w = TEXTW(tags[i]);
 		drw_setscheme(drw, (m->tagset[m->seltags] & 1 << i ? scheme[SchemeTagsSel] : tagscheme[i] ));
 		// Two monitors
-		drw_text(drw, x, 0, w, bh, lrpad / 2, m->num == 0 ? tags[i] : tags1[i], urg & 1 << i);
+		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
 
 		if (ulineall || m->tagset[m->seltags] & 1 << i) /* if there are conflicts, just move these lines directly underneath both 'drw_setscheme' and 'drw_text' :) */
 		drw_rect(drw, x + ulinepad, bh - ulinestroke - ulinevoffset, w - (ulinepad * 2), ulinestroke, 1, 0);

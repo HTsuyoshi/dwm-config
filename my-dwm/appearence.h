@@ -5,7 +5,8 @@ static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const int vertpad            = 10;       /* vertical padding of bar */
 static const int sidepad            = 10;       /* horizontal padding of bar */
 static const unsigned int gappx     = 10;
-static const unsigned int statgap   = 6;
+//static const unsigned int statgap   = 6;
+static const unsigned int statgap   = 0;
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;
 static const int topbar             = 1;
@@ -41,23 +42,33 @@ static const int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just 
 // static const char *tags[] = {"Term", "Draw", "Book", "Music", "Brow"};
 // static const char *tags1[] = {"Disc", "Tele", "Skyp", "Steam", "Lock"};
 
- static const char *tags[]  = {"1 ターミナル", "2 図", "3 本", "4 音楽", "5 ブラウザ"};
- static const char *tags1[] = {"1 ディスコード", "2 テレグラム", "3 スカイプ", "4 スティーム", "5 パスワード"};
-
 /*
+ static const char *tags[]  = {
+	 "1 ターミナル",
+	 "2 図",
+	 "3 本",
+	 "4 音楽",
+	 "5 ブラウザ",
+	 "6 ディスコード",
+	 "7 テレグラム",
+	 "8 スカイプ",
+	 "9 スティーム",
+	 "10 パスワード"
+ };
+*/
+
 static const char *tags[]  = {
     "1 - []",
     "2 - []",
     "3 - []",
     "4 - []",
-    "5 - []"};
-static const char *tags1[] = {
+    "5 - []",
     "1 - [ﭮ]",
     "2 - []",
     "3 - []",
     "4 - []",
-    "5 - []"};
-*/
+    "5 - []"
+	};
 
 /*
 static const char *tags[]  = {
@@ -65,8 +76,7 @@ static const char *tags[]  = {
     "2 - [] 図",
     "3 - [] 本",
     "4 - [] 音楽",
-    "5 - [] ブラウザ"};
-static const char *tags1[] = {
+    "5 - [] ブラウザ",
     "1 - [ﭮ] ディスコード",
     "2 - [] テレグラム",
     "3 - [] スカイプ",
